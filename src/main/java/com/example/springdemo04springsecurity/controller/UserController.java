@@ -2,6 +2,7 @@ package com.example.springdemo04springsecurity.controller;
 
 import com.example.springdemo04springsecurity.dto.UserDTO;
 import com.example.springdemo04springsecurity.service.UserService;
+import com.example.springdemo04springsecurity.utils.JwtUtil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
     private final UserService userService;
+    private final JwtUtil jwtUtil;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, JwtUtil jwtUtil) {
         this.userService = userService;
+        this.jwtUtil = jwtUtil;
     }
 
     @PostMapping("/register")
@@ -34,7 +37,8 @@ public class UserController {
             return "Username and password cannot be empty!";
         }
         if (userService.login(userDTO.getUsername(), userDTO.getPassword())) {
-            return "Login Success!";
+            String token = jwtUtil.generateToken(userDTO.getUsername());
+            return "Login Success!" + "token: " + token;
         }
         return "Login failed! Please check your username and password!";
     }

@@ -1,4 +1,4 @@
-package com.example.springdemo04springsecurity.controller;
+package com.example.springdemo04springsecurity.service;
 
 import com.example.springdemo04springsecurity.model.User;
 import com.example.springdemo04springsecurity.repository.UserRepo;

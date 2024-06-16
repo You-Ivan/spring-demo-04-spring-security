@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping
     public String sayHello() {
+        System.out.println("this method has been invoked!");
         return "Hello!";
     }
 }
