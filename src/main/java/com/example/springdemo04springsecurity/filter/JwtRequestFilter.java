@@ -1,8 +1,6 @@
-package com.example.springdemo04springsecurity.config;
+package com.example.springdemo04springsecurity.filter;
 
-import com.example.springdemo04springsecurity.repository.UserRepo;
 import com.example.springdemo04springsecurity.service.MyUserDetailService;
-import com.example.springdemo04springsecurity.service.UserService;
 import com.example.springdemo04springsecurity.utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

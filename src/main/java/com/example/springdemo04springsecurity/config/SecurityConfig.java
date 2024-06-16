@@ -1,6 +1,6 @@
 package com.example.springdemo04springsecurity.config;
 
-import com.example.springdemo04springsecurity.model.User;
+import com.example.springdemo04springsecurity.filter.JwtRequestFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

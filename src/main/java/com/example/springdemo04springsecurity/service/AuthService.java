@@ -6,10 +6,10 @@ import com.example.springdemo04springsecurity.utils.Encoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class AuthService {
     private final UserRepo userRepo;
 
-    public UserService(UserRepo userRepo) {
+    public AuthService(UserRepo userRepo) {
         this.userRepo = userRepo;
     }
 
