@@ -23,9 +23,9 @@ public class HelloController {
     }
 
     @GetMapping("/user")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
+    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     public String userPage() {
-        return "this page can be viewed by user";
+        return "this page can be viewed by user and admin";
     }
 
 }
